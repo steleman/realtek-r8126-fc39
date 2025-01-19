@@ -1,9 +1,9 @@
 # Realtek r8126 Ethernet driver for Linux Kernels >= 6.9
 
-This is a port of the r8216 Realetk Ethernet driver that compiles and works with Linux Kernels >= 6.9.X.
+This is a port of the r8126 Realetk Ethernet driver that compiles and works with Linux Kernels >= 6.9.X.
 It is based on the "official" Realtek driver as published by Realtek.
 
-The bulk of the changes are in `src/r8126_n.c` and `rtl_eeprom.c`.
+The bulk of the changes are in `src/r8126_n.c` and `src/rtl_eeprom.c`.
 
 ## Installation
 
