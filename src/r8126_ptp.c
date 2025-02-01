@@ -269,7 +269,7 @@ static int rtl8126_phc_enable(struct ptp_clock_info *ptp,
 }
 
 int rtl8126_get_ts_info(struct net_device *netdev,
-                        struct ethtool_ts_info *info)
+                        struct kernel_ethtool_ts_info *info)
 {
         struct rtl8126_private *tp = netdev_priv(netdev);
 
