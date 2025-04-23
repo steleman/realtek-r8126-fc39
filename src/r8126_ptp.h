@@ -35,6 +35,7 @@
 #ifndef _LINUX_R8126_PTP_H
 #define _LINUX_R8126_PTP_H
 
+#include <linux/version.h>
 #include <linux/ktime.h>
 #include <linux/timecounter.h>
 #include <linux/net_tstamp.h>
@@ -65,8 +66,13 @@ enum PTP_CMD_TYPE {
 struct rtl8126_private;
 struct RxDescV3;
 
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6,11,0)
+int rtl8126_get_ts_info(struct net_device *netdev,
+                        struct ethtool_ts_info *info);
+#else
 int rtl8126_get_ts_info(struct net_device *netdev,
                         struct kernel_ethtool_ts_info *info);
+#endif
 
 void rtl8126_ptp_reset(struct rtl8126_private *tp);
 void rtl8126_ptp_init(struct rtl8126_private *tp);
